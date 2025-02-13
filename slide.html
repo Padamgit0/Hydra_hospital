@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Example</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+         /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            width: 80%;
+            max-width: 800px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Slides */
+        .slides {
+            display: flex;
+            width: 300%; /* 3 slides = 300% width */
+            animation: slide 12s infinite; /* 12s total animation time */
+        }
+
+        /* Individual Slide */
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .slide .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Keyframes for Slideshow Animation */
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            33.33% { transform: translateX(-100%); }
+            66.66% { transform: translateX(-200%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* Pause on Hover */
+        .slideshow-container:hover .slides {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="/img/aboutus1.jpg" alt="Slide 1">
+                <div class="caption">Welcome to Hydra Hospital!</div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="/img/aboutus2.jpg" alt="Slide 2">
+                <div class="caption">Advanced Cardiology Services</div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="/img/Cardio2.png" alt="Slide 3">
+                <div class="caption">Join Our Health Fair on November 15th</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
